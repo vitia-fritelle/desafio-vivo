@@ -1,4 +1,4 @@
-const getDuration = (duration) => {
+const getTimestamp = (duration) => {
   let durationValue = Number(duration.slice(0, duration.indexOf(" ") + 1));
   let durationType = duration.slice(duration.indexOf(" ") + 1, duration.length);
   if (durationType === "horas") {
@@ -15,5 +15,5 @@ const getDuration = (duration) => {
 };
 
 module.exports = {
-  getDuration,
+  getTimestamp,
 };

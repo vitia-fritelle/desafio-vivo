@@ -4,7 +4,7 @@
             "ID": 1,
             "Descrição": "Importação de arquivos de fundos",
             "Data Máxima de conclusão": "2019-11-10 12:00:00",
-            "Tempo estimado": "2 minutos"
+            "Tempo estimado": "2 horas"
         },
         {
             "ID": 2,
@@ -16,7 +16,7 @@
             "ID": 3,
             "Descrição": "Importação de dados de integração",
             "Data Máxima de conclusão": "2019-11-11 08:00:00",
-            "Tempo estimado": "16 segundos"
+            "Tempo estimado": "3 horas"
         }
     ]
 }
