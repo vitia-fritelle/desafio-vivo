@@ -4,8 +4,12 @@
   "description": "Código para desafio O Teste: Scheduling Job da vivo.",
   "main": "src/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {},
+  "devDependencies": {
+    "jest": "^27.4.5"
+  }
 }
