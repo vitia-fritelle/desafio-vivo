@@ -8,14 +8,14 @@ function jobsApp(jobs, duration, minDate, maxDate) {
 
   const jobsFormatted = jobs
     .map((job) => {
-      let jobMaxEnd = Date.parse(job["Data Máxima de conclusão"]);
-      let duration = getTimestamp(job["Tempo estimado"]);
+      const jobMaxEnd = Date.parse(job["Data Máxima de conclusão"]);
+      const duration = getTimestamp(job["Tempo estimado"]);
       const object = {
         id: job.ID,
         jobMaxEnd,
         duration,
       };
-      if (jobMaxEnd - duration < minDate || jobMaxEnd > maxDate) {
+      if (jobMaxEnd-duration < minDate || jobMaxEnd > maxDate) {
         jobOutOfRange.push(job.ID);
       }
       return object;
@@ -25,17 +25,17 @@ function jobsApp(jobs, duration, minDate, maxDate) {
     })
     .map((job, idx) => {
       accValue += job.duration;
-      if (accValue <= duration) {
-        jobsTemp = [...jobsTemp, job.id];
-      }
+
       if (accValue > duration) {
         jobsFinal.push(jobsTemp);
         jobsTemp = [job.id];
         accValue = job.duration;
-      }
-      if (accValue <= duration && jobs.length - 1 === idx) {
+      } else if (jobs.length-1 === idx) {
         jobsFinal.push(jobsTemp);
+      } else {
+        jobsTemp = [...jobsTemp, job.id];
       }
+  
     });
 
   return { jobsFinal, jobOutOfRange };
